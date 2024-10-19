@@ -319,6 +319,8 @@ const useSubtitle = (
 			// @ts-expect-error We are accessing the private _video field here.
 			if (!subOcto.current || subOcto.current._video !== player.current) {
 				removeOctoSub();
+				// @ts-ignore
+				navigator.permissions.query({name: "local-fonts"});
 				subOcto.current = new Jassub({
 					video: player.current,
 					workerUrl: "/_next/static/chunks/jassub-worker.js",
