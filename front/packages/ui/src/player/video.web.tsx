@@ -329,6 +329,7 @@ const useSubtitle = (
 					offscreenRender: false,
 					subUrl: value.link,
 					fonts: fonts,
+					useLocalFonts: true,
 				});
 			} else {
 				subOcto.current.freeTrack();
