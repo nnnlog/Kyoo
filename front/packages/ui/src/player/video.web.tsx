@@ -320,7 +320,10 @@ const useSubtitle = (
 			if (!subOcto.current || subOcto.current._video !== player.current) {
 				removeOctoSub();
 				// @ts-ignore
-				navigator.permissions.query({name: "local-fonts"});
+				if (typeof queryLocalFonts === "function") {
+					// @ts-ignore
+					queryLocalFonts();
+				}
 				subOcto.current = new Jassub({
 					video: player.current,
 					workerUrl: "/_next/static/chunks/jassub-worker.js",
